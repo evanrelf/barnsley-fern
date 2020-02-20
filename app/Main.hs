@@ -1,4 +1,6 @@
 module Main (main) where
 
+import qualified BarnsleyFern
+
 main :: IO ()
-main = putTextLn "Hello world"
+main = BarnsleyFern.main

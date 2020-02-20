@@ -62,6 +62,13 @@ common execuable
 library
   import: common
   hs-source-dirs: src
+  exposed-modules:
+    BarnsleyFern
+  build-depends:
+    , diagrams-contrib
+    , diagrams-core
+    , diagrams-lib
+    , diagrams-svg
 
 
 --------------------------------------------------------------------------------
