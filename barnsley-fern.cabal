@@ -68,7 +68,7 @@ library
     , diagrams-contrib
     , diagrams-core
     , diagrams-lib
-    , diagrams-svg
+    , diagrams-rasterific
     , random
 
 

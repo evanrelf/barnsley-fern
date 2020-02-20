@@ -1,7 +1,10 @@
+{-# LANGUAGE NumericUnderscores #-}
+
+
 module BarnsleyFern (main) where
 
 
-import Diagrams.Backend.SVG.CmdLine (B, mainWith)
+import Diagrams.Backend.Rasterific.CmdLine (B, mainWith)
 import Diagrams.Prelude
 import Relude.Unsafe ((!!))
 import System.Random (RandomGen, getStdGen, randomR)
