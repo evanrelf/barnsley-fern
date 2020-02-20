@@ -60,5 +60,5 @@ fern shape ps = position (fmap (\p -> (p2 p, shape)) ps)
 main :: IO ()
 main = do
   rng <- getStdGen
-  let shape = circle 0.01 # fillColor green # lineWidth none
-  mainWith (fern shape (points rng 50000))
+  let shape = circle 0.001 # fillColor green # lineWidth none
+  mainWith (fern shape (points rng 500_000))
