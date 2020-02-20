@@ -3,10 +3,12 @@ module BarnsleyFern (main) where
 
 import Diagrams.Backend.SVG.CmdLine (B, mainWith)
 import Diagrams.Prelude
+import Relude.Unsafe ((!!))
+import System.Random (RandomGen, randomR)
 
 
 f1 :: (Double, Double) -> (Double, Double)
-f1 (x, y) = (x', y') where
+f1 (_x, y) = (x', y') where
   x' = 0
   y' = 0.16 * y
 
@@ -27,6 +29,16 @@ f4 :: (Double, Double) -> (Double, Double)
 f4 (x, y) = (x', y') where
   x' = (-0.15 * x) + (0.28 * y)
   y' = (0.26 * x) + (0.24 * y) + 0.44
+
+
+choose :: RandomGen g => g -> ((Double, Double) -> (Double, Double), g)
+choose rng = (f, rng') where
+  (roll, rng') = randomR (1, 100) rng
+  fs = replicate 1 f1
+    <> replicate 85 f2
+    <> replicate 7 f3
+    <> replicate 7 f4
+  f = fs !! roll
 
 
 fern :: Diagram B
